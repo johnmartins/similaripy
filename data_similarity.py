@@ -12,9 +12,6 @@ def ncd_bytes(x: bytes, y: bytes) -> float:
     z_y = lzma.compress(y)
     z_xy = lzma.compress(x + y)
 
-    print(f'len_x: {len(x)}, len_y: {len(y)}, len_xy: {len(x + y)}')
-    print(f'Z_x: {len(z_x)}, Z_y: {len(z_y)}, Z_xy: {len(z_xy)}')
-
     NCD = ( len(z_xy) - min(len(z_x), len(z_y)) )  / max(len(z_x), len(z_y))
     return NCD
 
